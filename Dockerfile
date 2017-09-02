@@ -22,7 +22,6 @@ RUN yum repolist > /dev/null && \
     yum-config-manager --disable \* &> /dev/null && \
     yum-config-manager --enable rhel-server-rhscl-7-rpms && \
     yum-config-manager --enable rhel-7-server-rpms && \
-    yum-config-manager --enable rhel-7-server-optional-rpms && \
     curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo > /etc/yum.repos.d/yarn.repo && \
     curl --silent --location https://rpm.nodesource.com/setup_8.x | bash - && \
     INSTALL_PKGS="nodejs yarn nss_wrapper" && \
