@@ -11,13 +11,11 @@ fi
 run_node() {
   echo -e "Environment: \n\tDEV_MODE=${DEV_MODE}\n\tNODE_ENV=${NODE_ENV}\n\tDEBUG_PORT=${DEBUG_PORT}"
   if [ "$DEV_MODE" == true ]; then
-    # echo "Launching via nodemon..."
-    # exec nodemon --debug="$DEBUG_PORT"
+    echo "Launching via nodemon..."
+    exec nodemon --debug="$DEBUG_PORT"
   else
-    # echo "Launching via npm..."
-    # exec npm run -d $NPM_RUN
-    echo "Building application..."
-    exec ember build --environment=production
+    echo "Launching via npm..."
+    exec npm run -d $NPM_RUN
   fi
 } 
 
