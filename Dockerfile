@@ -17,11 +17,9 @@ ENV NODEJS_VERSION=8 \
 
 # We need to call 2 (!) yum commands before being able to enable repositories properly
 # This is a workaround for https://bugzilla.redhat.com/show_bug.cgi?id=1479388
-RUN yum repolist > /dev/null && \
+RUN yum repolist all && \
     yum install -y yum-utils && \
-    yum-config-manager --disable \* &> /dev/null && \
-    yum-config-manager --enable rhel-server-rhscl-7-rpms && \
-    yum-config-manager --enable rhel-7-server-rpms && \
+    yum-config-manager --enable rhel-7-server-ose-3.5-rpms && \
     curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo > /etc/yum.repos.d/yarn.repo && \
     curl --silent --location https://rpm.nodesource.com/setup_8.x | bash - && \
     INSTALL_PKGS="nodejs yarn nss_wrapper" && \
