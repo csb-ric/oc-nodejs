@@ -22,7 +22,7 @@ RUN yum repolist all && \
     yum-config-manager --enable rhel-7-server-ose-3.5-rpms && \
     curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo > /etc/yum.repos.d/yarn.repo && \
     curl --silent --location https://rpm.nodesource.com/setup_8.x | bash - && \
-    INSTALL_PKGS="nodejs yarn nss_wrapper" && \
+    INSTALL_PKGS="nodejs yarn nss_wrapper git" && \
     yum install -y --setopt=tsflags=nodocs $INSTALL_PKGS && \
     rpm -V $INSTALL_PKGS && \
     yum clean all -y
