@@ -12,12 +12,19 @@ echo "---> Installing application source ..."
 mv /tmp/src/* ./
 
 echo "---> Installing dependencies"
-yarn
-yarn global add bower
-bower install
+if [ -f "packages.json" ]; then
+  yarn
+fi
 
-echo "---> Building your application from source"
-ember build -prod
+if [ -f "bower.json" ]; then
+  yarn global add bower
+  bower install
+fi
+
+if [ -f "ember-cli-build.js" ];
+  echo "---> Building your application from source"
+  ember build -prod
+fi
 
 # Fix source directory permissions
 echo "---> Fixing permissions"
