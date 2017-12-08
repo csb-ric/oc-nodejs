@@ -21,7 +21,7 @@ if [ -f "bower.json" ]; then
   bower install
 fi
 
-if [ -f "ember-cli-build.js" ];
+if [ -f "ember-cli-build.js" ]; then
   echo "---> Building your application from source"
   ember build -prod
 fi
