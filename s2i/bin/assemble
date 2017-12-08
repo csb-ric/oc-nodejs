@@ -12,7 +12,7 @@ echo "---> Installing application source ..."
 mv /tmp/src/* ./
 
 echo "---> Installing dependencies"
-if [ -f "packages.json" ]; then
+if [ -f "package.json" ]; then
   yarn
 fi
 
