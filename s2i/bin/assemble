@@ -21,7 +21,11 @@ if [ -f "bower.json" ]; then
   bower install
 fi
 
-if [ -f "ember-cli-build.js" ]; then
+if [ -f "config/deploy.js" ]; then
+  echo "---> Building your application using ember-cli-deploy"
+  ember deploy production --verbose
+
+elif [ -f "ember-cli-build.js" ]; then
   echo "---> Building your application from source"
   ember build -prod
 fi
