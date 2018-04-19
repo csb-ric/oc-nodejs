@@ -5,6 +5,8 @@ FROM rhscl/s2i-core-rhel7:1
 
 EXPOSE 8080
 
+USER root
+
 # Add $HOME/node_modules/.bin to the $PATH, allowing user to make npm scripts
 # available on the CLI without using npm's --global installation mode
 # This image will be initialized with "npm run $NPM_RUN"
